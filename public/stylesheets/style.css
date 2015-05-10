@@ -1,0 +1,696 @@
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  font: 38px 'Press Start 2P', cursive;;
+}
+
+@media (max-width: 800px) {
+
+  #nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    min-width: 320px;
+    width: 100%;
+    height: 80px;
+    color: #66afe9;
+    background-color: #080808;
+    box-shadow: 0 0 10px #000000;
+    z-index: 2;
+  }
+
+  #nav-home, #nav-videos, #nav-calender, #nav-blog {
+    min-width: 80px;
+    width: 25%;
+    height: 100%;
+    float: left;
+  }
+
+  #nav-home-img, #nav-play-button, #nav-calender-img, #nav-blog-img {
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+  }
+
+  #nav-home-title, #nav-play-title, #nav-calender-title, #nav-blog-title,
+  #nav-home-title-white, #nav-play-title-white, #nav-calender-title-white, #nav-blog-title-white{
+    font-size: 0;
+    visibility: hidden;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .click {
+    display: block;
+    border: none;
+    outline: 0;
+    padding: 20px;
+    padding-top: 20px;
+  }
+
+  .click:active {
+    border: none;
+    outline: 0;
+    width: 88%;
+    margin: 15px 6% 10px;
+    padding: 10px;
+    padding-top: 10px;
+    background-color: #66afe9;
+  }
+
+  .click:active span {
+    font-size: .95em;
+  }
+
+  #middle {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    z-index: 0;
+    background-color: #eeeeee;
+  }
+
+  #middle-container {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 30px;
+  }
+
+  .middle-div {
+    margin: 10px 5%;
+    background-color: #000000;
+    width: 90%;
+    box-shadow: 0 0 15px #000000;
+    color: #eeeeee;
+    text-align: center;
+    font-size: .5em;
+    line-height: 1.5em;
+    position: relative;
+  }
+
+  #kinda-funny-early, #kinda-funny-games-early, #store {
+    padding: 20px;
+  }
+
+  ul[rn-carousel].carousel-ul {
+    width: 90%;
+    margin: 10px 5% 0;
+    height: 540px;
+    font-size: .3em;
+    text-align: center;
+    background-color: #000000;
+    box-shadow: 0 0 15px #000000;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .rn-carousel-control {
+    color: #eeeeee;
+    background-color: #000000;
+    box-shadow: 0 0 10px #000000;
+  }
+
+  .carousel-li-div {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 90%;
+    color: #eeeeee;
+    background-color: #000000;
+  }
+
+  .carousel-li-title {
+    line-height: 1.5em;
+    font-size: 1.25em;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-left: 10px;
+  }
+
+  .carousel-li-text {
+    font-size: .9em;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    text-align: center;
+  }
+
+  .video-iframe {
+    width: 65%;
+    max-width: 450px;
+    height: 300px;
+    margin: 20px;
+    margin-left: 50px;
+  }
+
+  #middle-bottom {
+    margin: 10px 0;
+    width: 100%;
+    height: 60px;
+  }
+
+  .middle-bottom-container {
+    width: 40%;
+    height: 100%;
+    margin: 10px 5% 100px;
+    color: #eeeeee;
+    float: left;
+    text-align: center;
+    background-color: #000000;
+    box-shadow: 0 0 15px #000000;
+    cursor: pointer;
+  }
+
+  .middle-bottom-container:active {
+    width: 38%;
+    height: 98%;
+    margin: 10px 6% 100px;
+    background-color: #66afe9;
+    box-shadow: 0 0 10px #000000;
+    font-size: .95em;
+  }
+
+  .middle-bottom-title {
+    font-size: .45em;
+    vertical-align: middle;
+  }
+
+  #video-container {
+    padding-top: 100px;
+    padding-bottom: 90px;
+  }
+
+  #twitch-stream-container {
+    width: 90%;
+    margin: 10px 5%;
+    height: 500px;
+    padding-top: 10px;
+  }
+
+  #twitch-stream {
+    margin: 10px 5%;
+    width: 90%;
+    height: 378px;
+  }
+
+  .play-link {
+    padding-top: 10px;
+    min-height: 70px;
+    margin: 20px 5%;
+  }
+
+  #calender-container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    line-height: .5em;
+  }
+
+  .calender-div {
+    margin: 30px auto;
+  }
+
+  #calender-heading {
+    padding: 20px 0;
+  }
+
+  #calender-kinda-funny-patreon-link, #calender-kinda-funny-games-patreon-link {
+    padding: 10px;
+    background-color: #cf4417;
+  }
+
+  #calender-kinda-funny-games-twitch-link {
+    padding: 10px;
+    background-color: #3f068c;
+  }
+
+  #calender-kinda-funny, #calender-kinda-funny-games, #calender-twitch {
+    padding: 10px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+
+  .calender-title {
+    padding: 10px;
+    font-size: 1.5em;
+    line-height: 1.25em;
+  }
+
+  #blog-container {
+
+    margin-top: 100px;
+    margin-bottom: 90px;
+  }
+
+  #blog-title {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  #blog-text-container-may, #blog-text-container-feb {
+    width: 90%;
+    padding: 20px;
+  }
+
+  #blog-text-may, #blog-text-feb {
+    font-size: .4em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+  }
+
+  #about-container {
+    border: none;
+    outline: 0;
+    margin-top: 90px;
+    margin-bottom: 90px;
+  }
+
+  #about-quote {
+    padding: 20px;
+  }
+
+  #about-paragraph {
+    padding: 20px;
+  }
+
+  #about-profile-pic {
+    margin: 20px auto;
+    width: 260px;
+    height: 200px;
+    box-shadow: 0 3px 5px #eeeeee;
+  }
+
+  #bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #000000;
+    z-index: 1;
+    box-shadow: 0 0 10px #000000;
+  }
+
+  .tweet-pic {
+    border: 1px solid #eeeeee;
+    margin-left: 0;
+    margin-top: 5px;
+    float: left;
+    display: inline;
+    vertical-align: top;
+  }
+
+  #bottom-outer {
+    margin: 0 auto;
+  }
+
+  #bottom-container {
+    width: 100%;
+    margin-left: 20px;
+    margin-top: 0;
+    text-align: center;
+    padding: 10px;
+    height: 60px;
+    background-color: #000000;
+  }
+
+  .tweet-text {
+    line-height: 1.125em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    padding-left: 5px;
+    padding-top: 8px;
+    padding-right: 5px;
+    border-style: solid;
+    border-color: #eeeeee;
+    border-width: 1px;
+    color: #eeeeee;
+    background-color: #66afe9;
+    width: 65%;
+    height: 55px;
+    display: inline;
+    float: left;
+    vertical-align: top;
+    font-size: 8px;
+  }
+
+}
+
+@media (min-width: 801px) {
+
+  #nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    min-width: 320px;
+    width: 100%;
+    height: 80px;
+    color: #66afe9;
+    background-color: #080808;
+    box-shadow: 0 0 10px #000000;
+    z-index: 2;
+  }
+
+  #nav-home, #nav-videos, #nav-calender, #nav-blog {
+    min-width: 80px;
+    width: 25%;
+    height: 100%;
+    float: left;
+  }
+
+  #nav-home-img, #nav-play-button, #nav-calender-img, #nav-blog-img {
+    padding: 0;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+
+  #nav-home-title, #nav-play-title, #nav-calender-title, #nav-blog-title {
+    text-align: center;
+    font-size: .9em;
+    padding: 20px;
+    margin: 10px 20px;
+    visibility: visible;
+    width: 25%;
+    height: 100%;
+    float: left;
+  }
+
+  #nav-home-title-white, #nav-play-title-white, #nav-calender-title-white, #nav-blog-title-white {
+    color: #eeeeee;
+    text-align: center;
+    font-size: .9em;
+    padding: 20px;
+    margin: 10px 20px;
+    visibility: visible;
+    width: 25%;
+    height: 100%;
+    float: left;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .click {
+    display: block;
+    border: none;
+    outline: 0;
+    padding: 20px;
+    padding-top: 20px;
+  }
+
+  .click:active {
+    border: none;
+    outline: 0;
+    width: 88%;
+    margin: 15px 6% 10px;
+    padding: 10px;
+    padding-top: 10px;
+    background-color: #66afe9;
+  }
+
+  .click:active span {
+    font-size: .95em;
+  }
+
+  #middle {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    z-index: 0;
+    background-color: #eeeeee;
+  }
+
+  #middle-container {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 30px;
+  }
+
+  .middle-div {
+    margin: 10px 5%;
+    background-color: #000000;
+    width: 90%;
+    box-shadow: 0 0 15px #000000;
+    color: #eeeeee;
+    text-align: center;
+    font-size: .5em;
+    line-height: 1.5em;
+    position: relative;
+  }
+
+  #kinda-funny-early, #kinda-funny-games-early, #store {
+    padding: 20px;
+  }
+
+  ul[rn-carousel].carousel-ul {
+    width: 90%;
+    margin: 10px 5% 0;
+    height: 640px;
+    font-size: .3em;
+    text-align: center;
+    background-color: #000000;
+    box-shadow: 0 0 15px #000000;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .rn-carousel-control {
+    color: #eeeeee;
+    background-color: #000000;
+    box-shadow: 0 0 10px #000000;
+  }
+
+  .carousel-li-div {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 90%;
+    color: #eeeeee;
+    background-color: #000000;
+  }
+
+  .carousel-li-title {
+    line-height: 1.5em;
+    font-size: 1.5em;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-left: 10px;
+  }
+
+  .carousel-li-text {
+    font-size: 1.25em;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    text-align: center;
+  }
+
+  .video-iframe {
+    border-width: 0;
+    width: 75%;
+    max-width: 550px;
+    height: 400px;
+    margin: 20px;
+    margin-left: 50px;
+  }
+
+  #middle-bottom {
+    margin: 10px 0;
+    width: 100%;
+    height: 60px;
+  }
+
+  .middle-bottom-container {
+    width: 40%;
+    height: 100%;
+    margin: 10px 5% 100px;
+    color: #eeeeee;
+    float: left;
+    text-align: center;
+    background-color: #000000;
+    box-shadow: 0 0 15px #000000;
+    cursor: pointer;
+  }
+
+  .middle-bottom-container:active {
+    width: 38%;
+    height: 98%;
+    margin: 10px 6% 100px;
+    background-color: #66afe9;
+    box-shadow: 0 0 10px #000000;
+    font-size: .95em;
+  }
+
+  .middle-bottom-title {
+    font-size: .45em;
+    vertical-align: middle;
+  }
+
+  #video-container {
+    padding-top: 100px;
+    padding-bottom: 90px;
+  }
+
+  #twitch-stream-container {
+    width: 90%;
+    margin: 10px 5%;
+    height: 500px;
+    padding-top: 10px;
+  }
+
+  #twitch-stream {
+    margin: 10px 5%;
+    width: 90%;
+    height: 378px;
+  }
+
+  .play-link {
+    padding-top: 10px;
+    min-height: 70px;
+    margin: 20px 5%;
+  }
+
+  #calender-container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    line-height: .5em;
+  }
+
+  .calender-div {
+    margin: 30px auto;
+  }
+
+  #calender-heading {
+    padding: 20px 0;
+  }
+
+  #calender-kinda-funny-patreon-link, #calender-kinda-funny-games-patreon-link {
+    padding: 10px;
+    background-color: #cf4417;
+  }
+
+  #calender-kinda-funny-games-twitch-link {
+    padding: 10px;
+    background-color: #3f068c;
+  }
+
+  #calender-kinda-funny, #calender-kinda-funny-games, #calender-twitch {
+    padding: 10px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+
+  .calender-title {
+    padding: 10px;
+    font-size: 1.5em;
+    line-height: 1.25em;
+  }
+
+  #blog-container {
+
+    margin-top: 100px;
+    margin-bottom: 90px;
+  }
+
+  #blog-title {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  #blog-text-container-may, #blog-text-container-feb {
+    width: 90%;
+    padding: 20px;
+  }
+
+  #blog-text-may, #blog-text-feb {
+    font-size: .4em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+  }
+
+  #about-container {
+    border: none;
+    outline: 0;
+    margin-top: 90px;
+    margin-bottom: 90px;
+  }
+
+  #about-quote {
+    padding: 20px;
+  }
+
+  #about-paragraph {
+    padding: 20px;
+  }
+
+  #about-profile-pic {
+    margin: 20px auto;
+    width: 400px;
+    height: 300px;
+    box-shadow: 0 3px 5px #eeeeee;
+  }
+
+  #bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #000000;
+    z-index: 1;
+    box-shadow: 0 0 10px #000000;
+  }
+
+  .tweet-pic {
+    border: 1px solid #eeeeee;
+    margin-left: 0;
+    margin-top: 5px;
+    float: left;
+    display: inline;
+    vertical-align: top;
+  }
+
+  #bottom-outer {
+    margin: 0 auto;
+  }
+
+  #bottom-container {
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+    height: 60px;
+    background-color: #000000;
+  }
+
+  .tweet-text {
+    line-height: 1.125em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    padding-left: 5px;
+    padding-top: 8px;
+    padding-right: 5px;
+    border-style: solid;
+    border-color: #eeeeee;
+    border-width: 1px;
+    color: #eeeeee;
+    background-color: #66afe9;
+    width: 90%;
+    height: 55px;
+    display: inline;
+    float: left;
+    vertical-align: top;
+    font-size: 12px;
+  }
+
+}

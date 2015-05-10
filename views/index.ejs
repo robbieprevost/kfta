@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../images/favicon.ico">
+  <title>Kinda Funny</title>
+  <link rel="stylesheet" href="../stylesheets/normalize.css">
+  <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <link href="../stylesheets/angular-carousel.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+  <script src="../javascripts/angular.js"></script>
+  <script src="../javascripts/angular-touch.js"></script>
+  <script src="../javascripts/angular-carousel.js"></script>
+  <script src="../javascripts/angular-route.js"></script>
+  <script src="../javascripts/app.js"></script>
+</head>
+<body ng-controller="myController" ng-init="socket()">
+<div id="nav">
+      <div id="nav-home">
+        <h4 id="nav-home-title" ng-show="data.home" ng-click="workers.homeClick()">HOME</h4>
+        <h4 id="nav-home-title-white" ng-show="!data.home" ng-click="workers.homeClick()">HOME</h4>
+        <img id="nav-home-img" ng-src="{{data.homeImg}}" ng-click="workers.homeClick()">
+      </div>
+      <div id="nav-videos">
+        <h4 id="nav-play-title" ng-show="data.video" ng-click="workers.videoClick()">MEDIA</h4>
+        <h4 id="nav-play-title-white" ng-show="!data.video" ng-click="workers.videoClick()">MEDIA</h4>
+        <img id="nav-play-button" ng-src="{{data.videoImg}}" ng-click="workers.videoClick()">
+      </div>
+      <div id="nav-calender">
+        <h4 id="nav-calender-title" ng-show="data.calender" ng-click="workers.calenderClick()">TIMES</h4>
+        <h4 id="nav-calender-title-white" ng-show="!data.calender" ng-click="workers.calenderClick()">TIMES</h4>
+        <img id="nav-calender-img" ng-src="{{data.calenderImg}}" ng-click="workers.calenderClick()">
+      </div>
+      <div id="nav-blog">
+        <h4 id="nav-blog-title" ng-show="data.blog" ng-click="workers.blogClick()">BLOG</h4>
+        <h4 id="nav-blog-title-white" ng-show="!data.blog" ng-click="workers.blogClick()">BLOG</h4>
+        <img id="nav-blog-img" ng-src="{{data.blogImg}}" ng-click="workers.blogClick()">
+      </div>
+</div>
+<div id="home-container" ng-show="data.home">
+  <div id="middle">
+    <div id="middle-container">
+      <div class="carousel">
+        <ul rn-carousel rn-carousel-controls class="carousel-ul">
+          <li>
+            <div class="carousel-li-div">
+              <strong class="carousel-li-title"><br>THE<br> GAMEOVERGREGGY<br> SHOW</strong>
+              <br>
+              <iframe class="video-iframe" src="//www.youtube.com/embed/videoseries?list=PLOlEpGVXWUVuElrLteyTjRtdQRK-eUkI9" frameborder="" allowfullscreen></iframe>
+              <br>
+              <p class="carousel-li-text">Each and every Friday, Greg, Colin, Nick, and Tim get together to talk. Each podcaster brings a topic to the table, and then, they go.</p>
+            </div>
+          </li>
+          <li>
+            <div class="carousel-li-div">
+              <strong class="carousel-li-title"><br>&nbsp;KINDA FUNNY GAMESCAST</strong>
+              <br>
+              <iframe class="video-iframe" src="//www.youtube.com/embed/videoseries?list=PLy3mMHt2i7RIn1aLupj0mSiSAETxwHDwm" frameborder="" allowfullscreen></iframe>
+              <br>
+              <p class="carousel-li-text">Each and every day, Tim Gettys, Greg Miller, and Colin Moriarty get together to talk videogames.</p>
+            </div>
+          </li>
+          <li>
+            <div class="carousel-li-div">
+              <strong class="carousel-li-title"><br>&nbsp;KINDA FUNNY REACTS</strong>
+              <br>
+              <iframe class="video-iframe" src="//www.youtube.com/embed/videoseries?list=PLy3mMHt2i7RLYBKTaywPura3qy1okMX5a" frameborder="" allowfullscreen></iframe>
+              <br>
+              <p class="carousel-li-text">We react to stuff. Good stuff.</p>
+            </div>
+          </li>
+          <li>
+            <div class="carousel-li-div">
+              <strong class="carousel-li-title"><br>&nbsp;KINDA FUNNY PLAYS</strong>
+              <br>
+              <iframe class="video-iframe" src="//www.youtube.com/embed/videoseries?list=PLy3mMHt2i7RKd4pf3eUDSOuJYuTA--YIL" frameborder="" allowfullscreen></iframe>
+              <br>
+              <p class="carousel-li-text">We play games for your enjoyment. Daily.</p>
+            </div>
+          </li>
+          <li>
+            <div class="carousel-li-div">
+              <strong class="carousel-li-title"><br>&nbsp;A CONVERSATION WITH COLIN</strong>
+              <br>
+              <iframe class="video-iframe" src="//www.youtube.com/embed/videoseries?list=PL85130F65C312F61E" frameborder="" allowfullscreen></iframe>
+              <br>
+              <p class="carousel-li-text">The (almost) final season of A Conversation With Colin begins!</p>
+            </div>
+          </li>
+          <li>
+            <div class="carousel-li-div">
+              <strong class="carousel-li-title"><br>&nbsp;KINDA FUNNY UNBOXINGS</strong>
+              <br>
+              <iframe class="video-iframe" src="//www.youtube.com/embed/videoseries?list=PLOlEpGVXWUVsV6tqzYZybqvnmfieAGwfb" frameborder="" allowfullscreen></iframe>
+              <br>
+              <p class="carousel-li-text">We unbox the most ridiculous of items for your viewing pleasure.</p>
+            </div>
+          </li>
+          <li>
+            <div class="carousel-li-div">
+              <strong class="carousel-li-title"><br>&nbsp;OREO ORATION</strong>
+              <br>
+              <iframe class="video-iframe" src="//www.youtube.com/embed/videoseries?list=PLOlEpGVXWUVseSo6bQHB1ad2cN_qV3aXs" frameborder="" allowfullscreen></iframe>
+              <br>
+              <p class="carousel-li-text">Oreo makes endless variations of milk's favorite cookie and we review them all!</p>
+            </div>
+          </li>
+          <li>
+            <div class="carousel-li-div">
+              <strong class="carousel-li-title"><br>&nbsp;FOLLOW THE LITER</strong>
+              <br>
+              <iframe class="video-iframe" src="//www.youtube.com/embed/videoseries?list=PLOlEpGVXWUVsYNvEuam3_upWtI4Armwc-" frameborder="" allowfullscreen></iframe>
+              <br>
+              <p class="carousel-li-text">Welcome to Follow the Liter, where we teach you how to make fancy drinks that will impress your friends.</p>
+            </div>
+          </li>
+          <li>
+            <div class="carousel-li-div">
+              <strong class="carousel-li-title"><br>&nbsp;BEST OF KINDA FUNNY</strong>
+              <br>
+              <iframe class="video-iframe" src="//www.youtube.com/embed/videoseries?list=PLOlEpGVXWUVva3SRDehaWSqY890G-zDgg" frameborder="" allowfullscreen></iframe>
+              <br>
+              <p class="carousel-li-text">The very best of what we do. We promise to try harder next time...</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <a href="https://www.patreon.com/kindafunny" target="_blank">
+      <button class="middle-div click">
+        <span id="kinda-funny-early">
+          <strong>GET KINDA FUNNY EARLY.</strong>
+          <img src="../images/kindafunnylogo.png" width="30px" height="30px">
+        </span>
+      </button>
+    </a>
+    <a href="https://www.patreon.com/kindafunnygames" target="_blank">
+      <button class="middle-div click">
+        <span id="kinda-funny-games-early">
+          <strong>GET KINDA FUNNY GAMES EARLY.</strong>
+          <img src="../images/kindafunnygameslogoblue.png" width="30px" height="30px">
+        </span>
+      </button>
+    </a>
+    <a href="http://www.districtlines.com/kindafunny" target="_blank">
+      <button id="store-container" class="middle-div click">
+        <span id="store">
+          <span>KINDA FUNNY GEAR.</span>
+          <img id="store-img" src="../images/store.png" width="50px" height="30px">
+        </span>
+      </button>
+    </a>
+      <div id="middle-bottom">
+        <div class="middle-bottom-container" ng-click="workers.aboutClick()">
+          <span class="middle-bottom-title">ABOUT</span>
+        </div>
+        <a href="mailto:businessinquiries@thecollective-la.com">
+          <div id="contact-link" class="middle-bottom-container">
+            <span class="middle-bottom-title">CONTACT</span>
+          </div>
+        </a>
+    </div>
+  </div>
+</div>
+<div id="video-container" ng-show="data.video">
+  <div id="twitch-stream-container" class="middle-div">
+    <strong>LIVE TWITCH STREAM</strong>
+    <div id="twitch-stream-container">
+      <iframe id="twitch-stream" src="http://www.twitch.tv/kindafunnygames/embed" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </div>
+  <a href="https://www.youtube.com/kindafunny" target="_blank">
+    <button class="middle-div play-link click">
+      <span class="play-link-title">KINDA FUNNY ON YOUTUBE</span>
+    </button>
+  </a>
+  <a href="https://www.youtube.com/kindafunnygames" target="_blank">
+    <button class="middle-div play-link click">
+      <span class="play-link-title">KINDA FUNNY GAMES ON YOUTUBE</span>
+    </button>
+  </a>
+  <a href="http://www.kindafunny.bandcamp.com" target="_blank">
+    <button class="middle-div play-link click">
+      <span class="play-link-title">GET AUDIO EARLY</span>
+    </button>
+  </a>
+  <a href="https://www.vimeo.com/kindafunny" target="_blank">
+    <button class="middle-div play-link click">
+      <span class="play-link-title">GET VIDEO EARLY</span>
+    </button>
+  </a>
+  <a href="https://www.soundcloud.com/kindafunny" target="_blank">
+    <button class="middle-div play-link click">
+      <span class="play-link-title">KINDA FUNNY ON SOUNDCLOUD</span>
+    </button>
+  </a>
+  <a href="https://www.soundcloud.com/kindafunnygames" target="_blank">
+    <button class="middle-div play-link click">
+      <span class="play-link-title">KINDA FUNNY GAMES ON SOUNDCLOUD</span>
+    </button>
+  </a>
+  <a href="https://itunes.apple.com/us/podcast/the-gameovergreggy-show/id937940719?mt=2" target="_blank">
+    <button class="middle-div play-link click">
+      <span class="play-link-title">GOG SHOW ON ITUNES</span>
+    </button>
+  </a>
+  <a href="https://itunes.apple.com/us/podcast/kinda-funny-gamescast/id957171516?mt=2" target="_blank">
+    <button class="middle-div play-link click">
+      <span class="play-link-title">GAMESCAST ON ITUNES</span>
+    </button>
+  </a>
+</div>
+<div id="calender-container" ng-show="data.calender">
+  <div id="calender-heading" class="middle-div">
+    <h2>PROGRAM SCHEDULE</h2>
+  </div>
+  <div id="calender-kinda-funny" class="middle-div calender-div">
+    <strong class="calender-title">KINDA FUNNY</strong>
+    <p>
+      <strong>THE GAMEOVERGREGGY SHOW TOPICS</strong>
+      <p>Mon-Thurs</p>
+    </p>
+    <p>
+      <strong>THE GAMEOVERGREGGY FULL EPISODE*</strong>
+    <p>Friday</p>
+    </p>
+    <p>
+      <strong>A COVERSATION WITH COLIN</strong>
+    <p>Wednesday</p>
+    </p>
+    <small>*Get full episodes early by supporting us on Patreon.</small>
+  </div>
+  <a href="https://www.patreon.com/kindafunny" target="_blank">
+    <button id="calender-kinda-funny-patreon-link" class="middle-div calender-div click">
+      <span>GAMEOVERGREGGY SHOW EARLY!</span>
+    </button>
+  </a>
+  <div id="calender-kinda-funny-games" class="middle-div calender-div">
+    <strong class="calender-title">KINDA FUNNY GAMES</strong>
+    <p>
+      <strong>KINDA FUNNY GAMESCAST TOPICS</strong>
+    <p>Mon-Thurs</p>
+    </p>
+    <p>
+      <strong>GAMESCAST FULL SHOW*</strong>
+    <p>Friday</p>
+    </p>
+    <p>
+      <strong>LET'S PLAYS</strong>
+    <p>Mon-Fri</p>
+    </p>
+    <small>*Get full episodes early by supporting us on Patreon.</small>
+  </div>
+  <a href="https://www.patreon.com/kindafunnygames" target="_blank">
+    <button id="calender-kinda-funny-games-patreon-link" class="middle-div calender-div click">
+      <span>KINDA FUNNY GAMESCAST EARLY!</span>
+    </button>
+  </a>
+  <div id="calender-twitch" class="middle-div calender-div">
+    <strong class="calender-title">TWITCH STREAMS</strong>
+    <p>
+      <strong>COLIN & GREG LIVE</strong>
+    <p>Mon-Fri 11am</p>
+    </p>
+    <p>
+      <strong>OTHER GAME STREAMS</strong>
+    <p>Follow @KindaFunnyVids for details</p>
+    </p>
+  </div>
+  <a href="http://www.twitch.tv/kindafunnygames" target="_blank">
+    <button id="calender-kinda-funny-games-twitch-link" class="middle-div calender-div click">
+      <span>KINDA FUNNY ON TWITCH</span>
+    </button>
+  </a>
+</div>
+<div id="blog-container" ng-show="data.blog">
+  <div id="blog-title" class="middle-div">
+    <h2>BLOG</h2>
+  </div>
+  <div id="blog-text-may" class="middle-div">
+    <div id="blog-text-container-may">
+      <p>LETTER TO THE AUDIENCE: MAY 2015</p><br>
+      <p>May 7, 2015<br><br>
+        Dear Best Friends,<br><br>
+        It’s been awhile, hasn’t it? Well, not that long, really… not if you’ve been following us on Twitter, watching our videos, listening to our podcasts, and all of that. But it’s been a few months since I sat down to write you -- the loyal Kinda Funny community -- a letter.<br><br>
+        (Well, that’s not true either, really, because I wrote you one in March… we just never published it. C’est la vie.)
+        <br><br>
+        So, here we are! Kinda Funny is now four months old (at least as our full-time job) as of two days ago, and we’re pretty damn happy with what the four (and now five) of us have accomplished. Of course, this wouldn’t have even been remotely possible without all of you out there, whether you’re a Patreon or Twitch subscriber (or both!), simply watch our videos or download our podcasts at your leisure, or lurk around every once in a while, dropping in and out every now and then. Each and every one of you is appreciated, and we mean that from the very bottom of our hearts. It may sound trite, but it’s true: we do this for all of you, it wouldn’t work without you, and you honor us every day by giving our content your attention.
+        <br><br>
+        Last time I wrote to you was in early February, and a great deal has happened since then that I wanted to fill you in on. So first, let’s get into some metrics, since we promised early on we’d share all of the details with you on this front.
+        <br><br>
+        In February, Kinda Funny on YouTube was at 125,000 subscribers, while Kinda Funny Games was at 60,000 subs. Now, Kinda Funny Prime (as I lovingly call it, and only to myself) is at 140,000 subs, and Kinda Funny Games is around 90,000. We’re super pleased with this growth, however subtle, because we know how competitive the new online gaming landscape is. As many of you venture -- and continue to venture -- away from traditional games media and towards YouTube, Twitch, and various podcasts, we know there are plenty of choices out there, and so we’re pleased to have attracted as many people as we have. Thank you for that.
+        <br><br>
+        Our two YouTube channels now have over 24 million cumulative views, which is astounding to think about, and our audio podcast traffic has been nothing short of awesome, but something I really wanted to focus on even more in this particular letter is our growth on Twitch. We really believe in Twitch, even if it doesn’t work the way we (or all of you) want it to sometimes. But we’ve stuck with it. Colin & Greg Live is our daily flagship over there, and it regularly attracts anywhere from 4,000 to 7,000+ concurrents every day, and thousands of more views per episode in VOD. Nearly 50,000 people have favorited our Twitch page, and we’ve garnered 8.4 million views there in somewhere around 85 days of programming.
+        <br><br>
+        Again, we are honored for your support there, especially because we know many of you didn’t natively use Twitch until C&GL began. Thank you for coming with us and believing in our vision for that platform, and thank you for believing in Colin & Greg Live, too, which we believe is totally and wholly unique to this space. There are other gaming podcasts, and Let's Plays are everywhere, but there is nothing quite like Colin & Greg Live.
+        <br><br>
+        But enough numbers and boring business talk. Let’s chat about some of the mistakes we’ve made, as well as some of the exciting things we have coming up.
+        <br><br>
+        One of the things I love most about Kinda Funny is that we don’t exist (and persist) in a vacuum. Your input has, is, and will continue to change the way we do things. These past few days, we’ve taken a bit of a beating on how ads have been integrated into some of our podcasts. On this front, I assure you we hear you loud and clear. This is a brave new world for us, and we’re learning as we go. These mistakes will be rectified as we move on. What’s important for us to let you know is that these mistakes weren’t made out of carelessness, but more out of an attempt to be truly authentic. We don’t want to simply read ads; we want to integrate them. We’ve failed on that front in multiple cases. We acknowledge that, and we’re going to fix the problem. It’s our top priority right now. But when we go on a tangent about eyeglasses for several minutes during an ad for eyeglasses, well, it’s because several of us wear eyeglasses!
+        <br><br>
+        In the past few months, we’ve also cleaned up our communication with our Patreon subscribers, who are extremely, extremely important to us. We realized that our scheduling was a little wonky, and we also realized that some of Patreon’s tools were inconsistent, such as letting you know when something was scheduled or about to happen. We think we’ve gotten much better on this front, but please let us know if there are any other ways to improve.
+        <br><br>
+        Otherwise, the future is bright, my friends. In 9 days or so, we will conduct our very first live show right here in San Francisco in front of 400 people, and we are extremely excited to meet many of you face-to-face for the first time, and see others of you again. What’s most exciting about this show -- for me, anyway -- is that we’re going to unveil a ton of new stuff. We have so much in the pipeline right now, it’s absurd. New shows, new initiatives, new fixes for issues our loyal fanbase have brought to our attention, and yes, even unveiling a few new shirts you’ve been asking for. Kinda Funny Live is going to be a great time.
+        <br><br>
+        So, that’s it for now. Remember: you can always reach out to us on Twitter, e-mail us at business [at] kindafunny, send us a message on our official Facebook page, or jot down some notes in the comments of our videos. I assure you, we read all of it, and we’ll do our very best to get back to you, especially if you Tweet at us, reach out on Facebook, or shoot us an e-mail.
+        <br><br>
+        We believe that Kinda Funny is a revolution in the sense that your input will continue to fuel our movement forward. You have plenty of nice things to say, and some critiques, and it’s all relevant to us. Thank you for all of your feedback.
+        <br><br>
+        And again, thank you for supporting us, for being there for and with us, and for believing in us. We’re well on our way to proving to the world that going all-in on Kinda Funny was a no-brainer.
+        <br><br>
+        With love and appreciation, your friend,
+        <br><br> <br><br>
+        -Colin
+        <br><br>(Co-Founder, Kinda Funny)
+    </div>
+  </div>
+  <div id="blog-text-feb" class="middle-div">
+    <div id="blog-text-container-feb">
+    <p>LETTER TO THE AUDIENCE: FEBRUARY 2015</p><br>
+    <p>February 2, 2015<br><br>
+      Dear Best Friends,<br><br>
+      As expected, January flew by. And now it’s behind us.<br><br>
+      When we went all-in with Kinda Funny on January 5th -- and launched its sister channel Kinda Funny Games that same day -- we weren’t sure what to expect. How would people react to us quitting our jobs and focusing solely and wholly on Kinda Funny? Would people choose to support something new on Patreon? Would our YouTube channels grow? Would anyone even care at all? After all, the games space is rather saturated and crowded. Would we stand out and stand apart?<br><br>
+      The reaction, as you may have noticed, has been nothing short of amazing. As we’ve said countless times this past month, our post-IGN lives have exceeded our wildest and most lofty expectations. Thousands upon thousands of people have answered loud and clear that they want personality-driven games coverage that’s both (kinda) funny and insightful.<br><br>
+      Of course, this amazing reaction has simply upped the ante and raised the stakes. That’s why I’ve decided that, in the coming days, I’ll be asking all of our Patreon supporters -- whether on Kinda Funny, Kinda Funny Games, or both -- to fill out a detailed survey letting us know how we’re doing. What are we doing right? Where can we improve? What do you want the future to hold? What can we cut from what we’re already doing? These are just a few of the issues I want our paying subscribers to address, as candidly and honestly as possible.<br><br>
+      See, the beauty of Kinda Funny is that you have a very real say in its trajectory, and that say will be solicited in earnest, not just once, but as often as possible. Without you, we’re nothing. As such, one of the hallmarks of Kinda Funny is our openness with our audience, our candor. We want to let you in on everything and let you know just what’s happening. So let’s do that.<br><br>
+      I’m extraordinarily proud of what we’ve accomplished in such a short time with our brand on YouTube. In less than a month, our original Kinda Funny channel gained some 40,000 new subscribers -- from 85,000 to 125,000 --  while Kinda Funny Games, launched January 5th, is already hovering around 60,000 subscribers. That’s 100,000 new subs in the month of January. Our YouTube videos in January across both channels were viewed over 3 million times.<br><br>
+      Meanwhile, over on Twitch, we’ve mixed things up a bit, delivering content that’s sometimes conventional, and other times revolutionary. The support rallied around Colin & Greg Live, our new flagship, has been nothing short of staggering. Five or six thousand people join us every day when the show is on, and thousands more go into the archives to watch when they miss it. There’s truly nothing out there like Colin & Greg Live in the nerd culture space, which is why we’re so incredibly proud of it, and so honored that you’re digging it. It takes a page out of the sports coverage playbook, because let’s face it, if the likes of Grantland and ESPN have shown us anything, it’s that sports coverage is light years ahead of gaming coverage. So why not learn what we can from it, and inject it into what we do to make our products better?<br><br>
+      Of course, that’s not all we’re doing on Twitch. We’re also streaming as many games as we can, and thousands of you have joined us to watch streams for big games like Dying Light and Grim Fandango, and out there, smaller titles like Citizens of Earth and Ironclad Tactics. Our Twitch coverage, whether streams or Colin & Greg Live, were viewed more than 1.7 million times in only 20 days of programming. Over a thousand of you subscribe to us on Twitch, and more than 28 thousand people have favorited our channel.<br><br>
+      And it goes without saying that your support on Patreon has absolutely blown us away, and it’s allowing us (and will continue to allow us) to do bigger, better, and greater things. We thank you for that from the very bottom of our hearts.<br>
+      Naturally, with our successes come failures, failures that we need to -- and will -- address. With new endeavors like this comes unexpected problems, issues that you’ve been experiencing along with us as we learn. All I can tell you on this front is that we’re as bothered, if not even moreso, by the intermittent problems we encounter, and we’re doing our best to clean things up. Whenever a stream goes down, or audio isn’t right, or a video misses its upload time, we know it. We promise that these issues, as limited as they have been, will be rectified. It’s sometimes easy to forget that there are only four of us; we very easily underestimated how few people that is for how many things we have to do on a daily, weekly, and monthly basis.<br><br>
+      This is why your continued feedback is important, even if you’re not a Patreon supporter and therefore won’t get a go at our official survey. Just this past month, two pieces of feedback -- received scores of times -- changed the way we did things right before your very eyes. One of those pieces of feedback, about the lack of podcast audio quality when we switched to lapel mics, had us switch right back to our old, higher quality mics. And the other piece of feedback -- that you don’t want A Conversation With Colin to end -- was received loud and clear. I’m pleased to announce that this season of A Conversation With Colin, which I believe still has eight more episodes yet to air, will not be the final season. Our community spoke, and we listened. We encourage you to continue to speak, and I promise, we’ll continue to listen.<br>
+      Before I wrap things up, I want to take a moment to show appreciation for my three colleagues who kill themselves for Kinda Funny.<br><br>
+      Greg, our fearless leader, has thrown himself on more than one grenade in the past month, dealing with technical issues, leading the charge on Patreon, answering hundreds of e-mails, and generally putting out every fire he can. We all work seven days a week now, but Greg seems to sleep the least and be active the most. His dedication simply cannot go unnoticed. Greg and I have been a team for years, now. He truly is the yin to my yang, and continues to conduct a masterclass on how to be successful on the Internet.<br><br>
+      Many of you have noted how good our videos look, and that’s because of Nick, who not only expertly shoots and lights everything we do, but cuts a lot of it as well. Nick is also our “adult,” the man who deals with our lawyer and our accountant. He’s the reason we have health care (we know many of you were concerned about this), he’s the reason we have payroll, he’s the reason we have sponsorships. Nick’s zest for learning as he goes is the reason why we’re as far along on our path as we are. He simply doesn’t stop impressing me.<br><br>
+      Understanding the Internet and its ever-changing landscape is Tim’s job, and he’s used his knowledge to advance Kinda Funny in extraordinary ways. Snazzy headlines and pretty thumbnail images just begin to scratch the surface of what Tim does for us. He’s our master strategist, and his instincts are on-point, almost shockingly so. I’m also proud of how he stepped into hosting duties, not an easy task alongside two guys who have done this together for a very long time, and have an almost unbreakable rapport. Tim continuously reminds me that there are things I don’t know, as well as things I don’t know I don’t know.<br><br>
+      And then, there’s all of you out there, the people who allow us to do Kinda Funny for a living. You mean the absolute world to us -- every one of you -- and we are so appreciative that you’ve decided to take this journey with us. Our mission statement is simple: if you’re happy, we’re happy. If you’re not, we aren’t. That’s all there is to it.<br><br>
+      Thank you again for an amazing first month. You’ve entrusted us with a great deal, and we won’t let you down.<br><br><br><br>
+      Your Friend,<br><br> -Colin <br><br>(Co-Founder, Kinda Funny)<br><br></p>
+      </div>
+  </div>
+</div>
+<div id="about-container" ng-show="data.about">
+  <div id="about-info" class="middle-div">
+    <br>
+    <h2>WE ARE KINDA FUNNY</h2>
+    <h6 id="about-quote">
+        <i>"THE MOST EXCITING PEOPLE ON THE INTERNET JUST GOT MORE EXCITING!"</i>
+    </h6>
+    <img id="about-profile-pic" src="../images/profile.png">
+    <h6>
+      <i>"THESE GUYS MAKE ME LAUGH" - President Obama</i>
+    </h6>
+    <p id="about-paragraph">Greg Miller, Colin Moriarty, Tim Gettys and Nick Scarpino are Kinda Funny. We're four, sometimes five, best friends who love creating internet video for all our best friends out there.<br>
+      Fun fact, the movie Die Hard 2 was based on our lives. Except for Tim, Tim's life was the inspiration behind the 1983 film Risky Business starring Tom Cruise and Rebecca De Mornay.</p>
+    <p>
+      <strong>FOLLOW US ON TWITTER:</strong>
+    </p>
+    <p>
+      Greg Miller: <a href="https://www.twitter.com/gameovergreggy" target="_blank">@GameOverGreggy</a>
+    </p>
+    <p>
+      Colin Moriarty: <a href="https://www.twitter.com/notaxation" target="_blank">@notaxation</a>
+    </p>
+    <p>
+      Tim Gettys: <a href="https://www.twitter.com/timgettys" target="_blank">@TimGettys</a>
+    </p>
+    <p>
+      Nick Scarpino: <a href="https://www.twitter.com/nick_scarpino" target="_blank">@Nick_Scarpino</a>
+    </p>
+    <p>
+      Kinda Funny: <a href="https://www.twitter.com/kindafunnyvids" target="_blank">@KindaFunnyVids</a>
+    </p>
+    <br>
+  </div>
+</div>
+<div id="bottom">
+  <div id="bottom-outer">
+  <ul rn-carousel rn-carousel-auto-slide="8" rn-carousel-easing="elastic" id="bottom-container">
+    <li ng-repeat="tweet in data.tweets">
+      <div>
+        <img class="tweet-pic" ng-src="{{tweet.img}}" width="50" height="50">
+      </div>
+      <a ng-href="{{tweet.href}}" target="_blank">
+      <div class="tweet-text"><strong>{{tweet.text}}</strong></div>
+      </a>
+    <li>
+  </ul>
+  </div>
+  </div>
+</div>
+</body>
+</html>
